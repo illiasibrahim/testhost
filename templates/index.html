@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<form method="POST" action="">
+    {% csrf_token %}
+<input type="text" name="num">
+<button type="submit">submit</button>
+</form>
+
+{% for ran in random %}
+<div class="card" style="width: 18rem;">
+    <img class="card-img-top" src="{{ ran.image.url }}" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div>
+  <img class="card-img-top" src="{% static 'images/Screenshot from 2021-05-17 09-55-11.png' %}" alt="Card image cap">
+
+  
+
+  {% endfor %}
+
+{% endblock %}
